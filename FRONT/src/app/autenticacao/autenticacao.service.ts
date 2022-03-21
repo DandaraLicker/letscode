@@ -27,8 +27,8 @@ export class AutenticacaoService {
       )
       .pipe(
         tap((res) => {
-          console.log(res);
           const authToken = <string>res.body ?? '';
+          console.log(authToken);
           this.usuarioService.salvarToken(authToken);
         })
       );

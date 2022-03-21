@@ -1,0 +1,8 @@
+<div class="row">
+  <h1 class="kanban_titulo">KANBAN</h1>
+  <div class="kanban_listas">
+    <div *ngFor="let lista of listas" class="col-4">
+      <app-lista [titulo]="lista.descricao"></app-lista>
+    </div>
+  </div>
+</div>
