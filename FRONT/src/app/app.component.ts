@@ -16,9 +16,7 @@ export class AppComponent implements OnInit {
     this.autenticacaoService
       .autenticar(environment.usuarioRoot.login, environment.usuarioRoot.senha)
       .subscribe(
-        () => {
-          console.log('logado');
-        },
+        () => {},
         (error) => {
           console.log(error.message);
         }
