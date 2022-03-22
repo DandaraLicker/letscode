@@ -1,44 +1,53 @@
-<div class="card border-light text-center">
-  <div class="card-header">
-    <button (click)="deletarCard()" class="btn btn-outline-dark">
-      <i class="bi bi-trash3"></i>
-    </button>
+<div class="card mb-2 text-center">
+  <div class="card-header card_dark">
     <h3 *ngIf="!modoEdicao; else tituloEdicao" class="card-title">
       {{ card.titulo }}
     </h3>
+
     <ng-template #tituloEdicao>
       <input type="text" [(ngModel)]="card.titulo" />
     </ng-template>
-    <button (click)="editarCard()" class="btn btn-outline-dark">
-      <i class="bi bi-pencil-square"></i>
-    </button>
   </div>
-  <div class="card-body">
+  <div class="card-body card_dark">
     <div class="">
-      <button
-        *ngIf="card.lista !== listas[0].descricao"
-        (click)="moverEsquerda()"
-        class="btn btn-outline-dark"
-      >
-        <
-      </button>
       <p *ngIf="!modoEdicao; else conteudoEdicao">{{ card.conteudo }}</p>
       <ng-template #conteudoEdicao>
         <textarea [(ngModel)]="card.conteudo"></textarea>
       </ng-template>
-      <button
-        *ngIf="card.lista !== listas[listas.length - 1].descricao"
-        (click)="moverDireita()"
-        class="btn btn-outline-dark"
-      >
-        >
-      </button>
     </div>
-    <div *ngIf="modoEdicao">
-      <button (click)="cancelarEdicao()" class="btn btn-outline-dark">
+  </div>
+  <div class="card-footer card_dark footer">
+    <div *ngIf="!modoEdicao" class="card_footer visualizacao">
+      <div>
+        <button
+          *ngIf="card.lista !== listas[0].descricao"
+          (click)="moverEsquerda()"
+          class="btn btn_footer"
+        >
+          <
+        </button>
+        <button
+          *ngIf="card.lista !== listas[listas.length - 1].descricao"
+          (click)="moverDireita()"
+          class="btn btn_footer"
+        >
+          >
+        </button>
+      </div>
+      <div>
+        <button (click)="deletarCard()" class="btn btn_footer">
+          <i class="bi bi-trash3"></i>
+        </button>
+        <button (click)="editarCard()" class="btn btn_footer">
+          <i class="bi bi-pencil-square"></i>
+        </button>
+      </div>
+    </div>
+    <div *ngIf="modoEdicao" class="card_footer edicao">
+      <button (click)="cancelarEdicao()" class="btn btn_footer">
         <i class="bi bi-x-lg"></i>
       </button>
-      <button (click)="confirmarEdicao()" class="btn btn-outline-dark">
+      <button (click)="confirmarEdicao()" class="btn btn_footer">
         <i class="bi bi-check2"></i>
       </button>
     </div>

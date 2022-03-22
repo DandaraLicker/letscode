@@ -6,7 +6,7 @@ import { Card } from './card';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css'],
+  styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
   @Input() card!: Card;
@@ -44,6 +44,8 @@ export class CardComponent {
 
   cancelarEdicao() {
     this.editarCard();
+    this.novoCard = !this.novoCard;
+    this.novoCardChange.emit(this.novoCard);
     this.kanbanService.ListarCards();
   }
 

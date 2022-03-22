@@ -1,0 +1,30 @@
+.card_footer {
+  display: flex;
+
+  &.edicao {
+    justify-content: flex-end;
+  }
+
+  &.visualizacao {
+    justify-content: space-between;
+  }
+}
+
+.card_dark {
+  background-color: #212529e6;
+  color: white;
+
+  &.footer {
+    border-block-color: transparent;
+  }
+}
+
+.btn_footer {
+  border-color: transparent;
+  color: white;
+}
+
+.btn_footer:hover {
+  border-color: transparent;
+  color: #e01688;
+}

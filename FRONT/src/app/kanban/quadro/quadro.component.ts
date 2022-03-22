@@ -7,7 +7,7 @@ import { KanbanService } from './../kanban.service';
 @Component({
   selector: 'app-quadro',
   templateUrl: './quadro.component.html',
-  styleUrls: ['./quadro.component.css'],
+  styleUrls: ['./quadro.component.scss'],
 })
 export class QuadroComponent {
   listas = environment.listas;

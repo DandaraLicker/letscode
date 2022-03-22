@@ -1,18 +1,20 @@
-<div class="col-11">
-  <h2 class="lista_titulo">{{ titulo }}</h2>
-  <div *ngFor="let card of cards$ | async as cards">
-    <app-card [card]="card"> </app-card>
-  </div>
-  <app-card
-    *ngIf="novoCard"
-    [modoEdicao]="novoCard"
-    [(novoCard)]="novoCard"
-    [card]="card"
-  >
-  </app-card>
-  <div class="d-grid gap-2" *ngIf="titulo == 'ToDo'">
-    <button type="button" class="btn btn-outline-primary" (click)="criarCard()">
-      +
-    </button>
+<div class="row justify-content-center align-items-center">
+  <div class="col-11">
+    <h2 class="lista_titulo">{{ titulo }}</h2>
+    <div *ngFor="let card of cards$ | async as cards">
+      <app-card [card]="card"> </app-card>
+    </div>
+    <app-card
+      *ngIf="novoCard"
+      [modoEdicao]="novoCard"
+      [(novoCard)]="novoCard"
+      [card]="card"
+    >
+    </app-card>
+    <div class="d-grid gap-2" *ngIf="titulo == 'ToDo'">
+      <button type="button" class="btn btn-outline-light" (click)="criarCard()">
+        +
+      </button>
+    </div>
   </div>
 </div>
